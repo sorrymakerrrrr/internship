@@ -1,5 +1,3 @@
-import os
-import datetime
 
 __all__ = ['min_distance']
 

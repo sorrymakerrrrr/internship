@@ -22,13 +22,13 @@ def main(src1: str, src2: str, dst: str, cur_month: int):
     pre_month = 12 if cur_month == 1 else cur_month - 1
     # 当前月岗位数据预处理
     main1(src=src1,
-          dst=os.path.join(dst, '10月预处理'),
+          dst=os.path.join(dst, f'{cur_month}月预处理'),
           log_dst=os.path.join(dst, '岗位去重', f'{cur_month}月岗位去重日志'),
           table_name=rf'{cur_month}月岗位预处理总表')
 
     # 之前月岗位数据预处理
     main1(src=src2,
-          dst=os.path.join(dst, '9月预处理'),
+          dst=os.path.join(dst, f'{pre_month}月预处理'),
           log_dst=os.path.join(dst, '岗位去重', f'{pre_month}月岗位去重日志'),
           table_name=rf'{pre_month}月岗位预处理总表')
 
@@ -47,7 +47,7 @@ def main(src1: str, src2: str, dst: str, cur_month: int):
 
 
 if __name__ == '__main__':
-    main(src1=r'E:\job\岗位处理\9月岗位原始数据',
-         src2=r'E:\job\岗位处理\10月岗位原始数据',
-         dst=r'E:\job\岗位处理',
-         cur_month=10)
+    main(src1=r'E:\job\岗位处理8、9月\9月岗位原始数据',
+         src2=r'E:\job\岗位处理8、9月\8月岗位原始数据',
+         dst=r'E:\job\岗位处理8、9月',
+         cur_month=9)

@@ -82,4 +82,4 @@ class Preprocessing:
 
 
 if __name__ == '__main__':
-    test = Preprocessing(r'E:\job\10月内容\10月岗位原始数据\4399-20221026.xlsx')
+    pass

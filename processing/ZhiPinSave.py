@@ -21,9 +21,9 @@ class Save(FSave):
         dst = self._dst
         self.mkdir(dst)
         day = self.day
-        table_name = f'{table_name[: -14]}预处理-{day}.xlsx'
+        table_name = f'{table_name[: -5]}预处理-{day}.xlsx'
         path = os.path.join(dst, table_name)
-        print(f'正在写入: {table_name[: -14]}')
+        print(f'正在写入: {table_name}')
         df.to_excel(path, sheet_name=sheet_name, index=index)
         print(f'{table_name} 写入完成!')
 
