@@ -1,5 +1,6 @@
 import os
 import datetime
+from Save import FSave
 
 
 def write_log(log_dst: str, logs_list: list, company: str, log_name: str) -> str:
@@ -14,6 +15,7 @@ def write_log(log_dst: str, logs_list: list, company: str, log_name: str) -> str
     time = datetime.date.strftime(datetime.datetime.today(), "%Y%m%d")
     los_name = f'{log_name}-{company}-{time}.txt'
     logs = '\n'.join(logs_list) + '\n'
+    FSave.mkdir(dst)
     with open(os.path.join(dst, los_name), mode='w', encoding='utf-8') as f:
         f.write(logs)
     return '日志写入成功!'
